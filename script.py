@@ -27,13 +27,17 @@ def run(playwright):
     Args:
         playwright: instância do Playwright
     """
+    user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+    realistic_user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+    
     browser = playwright.chromium.launch(
         #args=['--start-maximized'],
-        headless=False
+        headless=False,
     )
     context = browser.new_context(
         # record_video_dir = "videos/"
-        viewport={"width": 1920, "height": 1080}
+        # viewport={"width": 1920, "height": 1080},
+        # user_agent=realistic_user_agent
     )
     page = context.new_page()
     page.goto(url)
@@ -249,12 +253,17 @@ def pegar_dados_do_documento(documento):
 
     # - URL especifica do acérdao (para referéncia futura)
     url_base = "https://processo.stj.jus.br"
-    url_do_documento = documento.find("a", { "aria-label": "Exibir o inteiro teor do acórdão." })\
-                                .get('href')\
+    url_do_documento = documento.find("a", { "aria-label": "Exibir o inteiro teor do acórdão." })
+
+    if url_do_documento:
+        url_do_documento = url_do_documento.get('href')\
                                 .replace("javascript:inteiro_teor('", "")\
                                 .replace("')", "")
+    else:
+        url_do_documento = None
+
     url_do_acordao = url_base + url_do_documento
-    if url_do_acordao:
+    if url_do_documento:
         url_do_acordao = url_do_acordao.strip()
     else:
         url_do_acordao = ""
