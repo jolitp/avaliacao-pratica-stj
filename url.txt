@@ -1,0 +1,1 @@
+https://processo.stj.jus.br/SCON/jurisprudencia/toc.jsp?numDocsPagina=10&tipo_visualizacao=&filtroPorNota=&ref=&p=false&b=ACOR&data=%40DTDE%3E%3D%2220201001%22+AND+%40DTDE%3C%3D%2220251001%22&i=1&l=10&ordenacao=-TEMA%2C-%40DTPB&tp=T&operador=AND&livre=JUROS+AND+MORA+AND+FAZENDA+AND+PUBLICA+AND+CORRECAO+AND+MONETARIA&b=ACOR

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "avaliacao-pratica-stj"
+version = "0.1.0"
+description = ""
+authors = ["João Luís <jolitp@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.12"
+playwright = "^1.55.0"
+rich = "^14.2.0"
+beautifulsoup4 = "^4.14.2"
+lxml = "^6.0.2"
+pandas = "^2.3.3"
+openpyxl = "^3.1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
