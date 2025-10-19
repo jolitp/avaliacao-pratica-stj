@@ -262,9 +262,8 @@ def pegar_dados_do_documento(documento):
     else:
         url_do_documento = None
 
-    url_do_acordao = url_base + url_do_documento
     if url_do_documento:
-        url_do_acordao = url_do_acordao.strip()
+        url_do_acordao = url_base + url_do_documento
     else:
         url_do_acordao = ""
 
